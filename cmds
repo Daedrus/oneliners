@@ -1,0 +1,6 @@
+=== AWK ===
+
+- Match lines with pattern "whitespace* + word + whitespace* + word"; Useful when looking for structs which have fields with the same name as their type.
+
+    awk 'match($0, /\s([[:alnum:]_]*)\s([[:alnum:]_]*);/, matches) {if (matches[1]==matches[2]) {print NR matches[0];}}'
+
