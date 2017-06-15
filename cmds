@@ -4,3 +4,15 @@
 
     awk 'match($0, /\s([[:alnum:]_]*)\s([[:alnum:]_]*);/, matches) {if (matches[1]==matches[2]) {print NR matches[0];}}'
 
+=== GIT ===
+
+- List all commits which have modified a specific file
+
+    - Git log traversal might omit some commits
+
+        git log path/to/file
+
+    - This one includes commits from all refs/, along with HEAD
+
+        git rev-list --all -- path/to/file
+
