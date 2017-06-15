@@ -16,3 +16,7 @@
 
         git rev-list --all -- path/to/file
 
+- List all commits which have modified a specific file with a specific pattern
+
+    git grep testpattern $(git rev-list --all -- path/to/file) -- path/to/file
+
