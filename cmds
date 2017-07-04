@@ -1,6 +1,16 @@
+=== FIND ===
+
+- Recursively find files ending in .tmp in the current folder and remove them.
+  The string '{}' is replaced by the current file name being processed
+  everywhere it occurs in the arguments to the command. '\' is used to escape
+  ';' so that the shell does not process it.
+
+    find . -name "*.tmp" -exec rm {} \;
+
 === AWK ===
 
-- Match lines with pattern "whitespace* + word + whitespace* + word"; Useful when looking for structs which have fields with the same name as their type.
+- Match lines with pattern "whitespace* + word + whitespace* + word"; Useful
+  when looking for structs which have fields with the same name as their type.
 
     awk 'match($0, /\s([[:alnum:]_]*)\s([[:alnum:]_]*);/, matches) {if (matches[1]==matches[2]) {print NR matches[0];}}'
 
