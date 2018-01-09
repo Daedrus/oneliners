@@ -30,3 +30,9 @@
 
     git grep testpattern $(git rev-list --all -- path/to/file) -- path/to/file
 
+=== VIMDIFF ===
+
+- Export output to an HTML file called diff.html
+
+    vimdiff  file1.txt file2.txt -c TOhtml -c 'w! diff.html' -c 'qa!'
+
